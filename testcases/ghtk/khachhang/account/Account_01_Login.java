@@ -39,7 +39,7 @@ public class Account_01_Login {
     // Kiểm tra title của trang
     public void TC_O1_Title(){
         //phương thức getTile là để lấy ra tile của trang web
-        String actualTitle = driver.getTitle();
+        String actualTitle = abstractPage.getTitle(driver);
         //Khai báo biến dạng string là giá trị mong đợi
         String expectedTitle = "GHTK - Dịch vụ giao hàng trong ngày chuyên nghiệp";
         // So sánh kết quả thực tế tế với kết quả mong đợi. Nếu bằng nhau thì passed. Không giống nhau là TC failed
