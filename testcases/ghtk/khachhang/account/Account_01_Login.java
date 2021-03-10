@@ -10,9 +10,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import commons.AbstractPage;
+
 public class Account_01_Login {
 	WebDriver driver;
     public static final String url_statistic = "https://khachhang.giaohangtietkiem.vn/khachhang";
+    AbstractPage abstractPage;
     
 	//Pre-condition: thường dùng để set up những khởi tạo ban đầu như: khởi tạo chromedriver, set thời gian chờ load element, mở trình duyệt
 	@BeforeClass
@@ -20,15 +23,16 @@ public class Account_01_Login {
 		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
 		// Khởi tạo ChromeDriver
         driver = new ChromeDriver();
+        abstractPage = new AbstractPage();
         // Mở trình duyệt web
         System.out.println("Login - STEP 1: Open Url");
         driver.get("https://khachhang.giaohangtietkiem.vn/khach-hang/dang_nhap");
-        //Set thời gian chờ load element. Nếu chờ quá 10s mà không tìm thấy element nó sẽ timeout
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //Abstract Page
+        abstractPage.openURL(driver, "https://khachhang.giaohangtietkiem.vn/khach-hang/dang_nhap");
         // Mở to full cửa sổ trình duyệt
         driver.manage().window().maximize();
         // chỉ là lệnh in ra dòng chữ "Get link url"
-        System.out.println("Get link url");
+        System.out.println(abstractPage.getCurrentURL(driver)); 
 	}
 	// Thực thi các testcase
     @Test
@@ -47,10 +51,12 @@ public class Account_01_Login {
         //1. Mở trình duyệt (đã thực hiện ở hàm beforeClass
         //2. Điền email của shop vào ô textbox
         System.out.println("Login - STEP 2: Input emailId into textbox");
-        driver.findElement(By.id("ShopEmail")).sendKeys("lienltb@ghtk.vn");
+        abstractPage.sendkeyToElement(driver.findElement(By.id("ShopEmail")), "lienltb@ghtk.vn");
+        //driver.findElement(By.id("ShopEmail")).sendKeys("lienltb@ghtk.vn");
         //3. Điền password
         System.out.println("Login - STEP 3: Input pw into textbox");
-        driver.findElement(By.id("ShopPassword")).sendKeys("shoptét12345");
+        abstractPage.sendkeyToElement(driver.findElement(By.id("ShopPassword")), "shoptét12345");
+        //driver.findElement(By.id("ShopPassword")).sendKeys("shoptét12345");
         //4. Click button Đăng Nhập
         System.out.println("Login - STEP 4: Click button Đang Nhap");
         driver.findElement(By.xpath("//span[contains(text(),'Đăng Nhập')]")).click();
