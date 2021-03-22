@@ -69,7 +69,8 @@ public class AbstractPage {
 		driver.findElement(By.xpath(locator)).click();
 	}
 
-	public void sendkeyToElement(WebElement element, String value) {
+	public void sendkeyToElement(WebDriver driver, String locator, String value) {
+		element = driver.findElement(By.id(locator));
 		element.sendKeys(value);
 	}
 	
@@ -224,7 +225,7 @@ public class AbstractPage {
     }
 
     public void sendkeyToElementByJS(WebDriver driver, String locator, String value) {
-        element = driver.findElement(By.xpath(locator));
+        element = driver.findElement(By.id(locator));
         javascriptExecutor = (JavascriptExecutor) driver;
         javascriptExecutor.executeScript("arguments[0].setAttribute('value', '" + value + "')", element);
     }
@@ -247,8 +248,8 @@ public class AbstractPage {
     }
 
     public void waitForElementVisible(WebDriver driver, String locator) {
-        wait = new WebDriverWait(driver, 30);
-        By byLocator = By.xpath(locator);
+        wait = new WebDriverWait(driver, 5);
+        By byLocator = By.id(locator);
         wait.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
     }
 

@@ -1,5 +1,8 @@
 eclipse.preferences.version=1
 encoding//actions/commons/AbstractPage.java=UTF-8
-encoding//testcases/ghtk/khachhang/account/Account_01_Login.java=UTF-8
+encoding//interfaces/pageUIs/LoginPageUI.java=UTF-8
+encoding//testcases/ghtk/khachhang/account/Account_01_Login_AbstractPage_01.java=UTF-8
+encoding//testcases/ghtk/khachhang/account/Account_02_Login_AbstractPage_02.java=UTF-8
+encoding//testcases/ghtk/khachhang/account/Account_03_Login_PageObjectPattern.java=UTF-8
 encoding//testcases/ghtk/khachhang/packages/Packages_01_createPackage.java=UTF-8
 encoding//testcases/ghtk/khachhang/packages/Packages_02_createPackagesByExcel.java=UTF-8

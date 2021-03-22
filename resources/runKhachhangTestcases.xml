@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Suite" parallel="false">
-  <test name="Test">
+<suite parallel="false" name="Selenium Webdriver API">
+  <test name="Run test on Chrome browser">
     <classes>
-      <class name="ghtk.khachhang.account.Account_01_Login"/>
+      <class name="ghtk.khachhang.account.Account_03_Login_PageObjectPattern"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test>
+</suite>
