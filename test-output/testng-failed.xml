@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [Selenium Webdriver API]">
+  <test name="Run test on Chrome browser(failed)">
     <classes>
       <class name="ghtk.khachhang.account.Account_03_Login_PageObjectPattern">
         <methods>
@@ -11,5 +11,5 @@
         </methods>
       </class> <!-- ghtk.khachhang.account.Account_03_Login_PageObjectPattern -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Run test on Chrome browser(failed) -->
+</suite> <!-- Failed suite [Selenium Webdriver API] -->

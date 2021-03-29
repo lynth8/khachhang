@@ -2,7 +2,7 @@
 <suite parallel="false" name="Selenium Webdriver API">
   <test name="Run test on Chrome browser">
     <classes>
-      <class name="ghtk.khachhang.account.Account_03_Login_PageObjectPattern"/>
+      <class name="ghtk.khachhang.account.Account_05_Login_PageGenerator"/>
     </classes>
   </test>
 </suite>

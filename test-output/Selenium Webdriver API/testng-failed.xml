@@ -7,6 +7,7 @@
         <methods>
           <include name="beforeClass"/>
           <include name="TC_O2_CheckLoginSuccessful"/>
+          <include name="afterClass"/>
         </methods>
       </class> <!-- ghtk.khachhang.account.Account_03_Login_PageObjectPattern -->
     </classes>

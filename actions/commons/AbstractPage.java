@@ -115,7 +115,7 @@ public class AbstractPage {
 	}
 	
 	public String getTextElement(WebDriver driver, String locator) {
-		return driver.findElement(By.xpath(locator)).getText();
+		return driver.findElement(By.id(locator)).getText();
 	}
 	
 	public int countElementNumber(WebDriver driver, String locator) {
@@ -248,11 +248,16 @@ public class AbstractPage {
     }
 
     public void waitForElementVisible(WebDriver driver, String locator) {
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 30);
         By byLocator = By.id(locator);
         wait.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
     }
 
+    public void waitForElementVisible(WebDriver driver, WebElement element) {
+        wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+    
     public void waitForElementClickable(WebDriver driver, String locator) {
         wait = new WebDriverWait(driver, 30);
         By byLocator = By.xpath(locator);
